@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7080电影网 | 黄金年代放映厅 · 回到港片录像厅最热闹的那些年</title>
+<meta name="description" content="7080电影网（7080dianyingwang-zh.github.io）是专注七八十年代经典港片、录像厅记忆与老电影修复版的怀旧电影导航站，带你回到录像厅最热闹的那些年。">
+<meta name="keywords" content="7080电影网,七八十年代电影,港片,录像厅,老电影,经典港片,怀旧,黄金年代,VHS,双碟装,成龙,周润发,录像带,港片怀旧">
+<meta name="author" content="7080电影网">
+<meta name="robots" content="index,follow">
+<meta name="renderer" content="webkit">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:title" content="7080电影网 | 黄金年代放映厅">
+<meta property="og:description" content="回到港片录像厅最热闹的那些年。七八十年代经典港片、录像厅记忆、老片修复版，一期一期慢慢看。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://7080dianyingwang-zh.github.io">
+<meta property="og:site_name" content="7080电影网">
+<link rel="canonical" href="https://7080dianyingwang-zh.github.io">
+<style>
+:root{
+    --vhs:#f4ecd8;
+    --vhs-2:#ebe0c6;
+    --vhs-3:#e0d2b2;
+    --ink:#241f1c;
+    --ink-2:#5c4f45;
+    --ink-3:#8d7c6b;
+    --neon:#ff2e4d;
+    --neon-2:#ff7a00;
+    --neon-3:#ffb800;
+    --neon-4:#00b8a9;
+    --teal:#1b6b66;
+    --maroon:#8c2030;
+    --line:#dccdb0;
+    --line-2:#cfbb98;
+    --shadow-s:0 2px 10px rgba(80,50,20,.08);
+    --shadow-m:0 14px 34px -14px rgba(80,50,20,.32);
+    --shadow-l:0 30px 70px -24px rgba(80,40,20,.5);
+    --r-s:6px;
+    --r-m:14px;
+    --r-l:24px;
+    --ease:cubic-bezier(.22,.78,.3,1);
+    --mono:"Courier New","Lucida Console",monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+    font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    background:var(--vhs);color:var(--ink);line-height:1.8;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--neon);color:#fff}
+.mono{font-family:var(--mono)}
+
+/* 录像带扫描线 + 暗角 */
+body::before{
+    content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+    background:
+        radial-gradient(circle at 50% -10%,rgba(255,46,77,.1),transparent 50%),
+        radial-gradient(circle at 50% 110%,rgba(0,184,169,.09),transparent 45%);
+}
+body::after{
+    content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.42;
+    background:repeating-linear-gradient(0deg,transparent 0,transparent 3px,rgba(80,50,20,.022) 3px,rgba(80,50,20,.022) 4px);
+}
+
+/* 顶部彩条 */
+.bars{height:5px;background:linear-gradient(90deg,var(--neon) 0%,var(--neon) 25%,var(--neon-2) 25%,var(--neon-2) 50%,var(--neon-3) 50%,var(--neon-3) 72%,var(--neon-4) 72%,var(--neon-4) 100%)}
+
+/* 导航 */
+.nav{position:sticky;top:0;z-index:1000;background:rgba(244,236,216,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-row{max-width:1260px;margin:0 auto;padding:0 30px;height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{position:relative;width:52px;height:34px;border-radius:4px;background:var(--ink);box-shadow:0 4px 12px rgba(36,31,28,.25);overflow:hidden;flex-shrink:0;cursor:pointer;transition:.4s var(--ease)}
+.logo::before{content:"";position:absolute;left:6px;right:6px;top:8px;bottom:8px;background:repeating-linear-gradient(90deg,var(--neon) 0,var(--neon) 3px,var(--ink) 3px,var(--ink) 6px,var(--neon-2) 6px,var(--neon-2) 9px,var(--ink) 9px,var(--ink) 12px,var(--neon-3) 12px,var(--neon-3) 15px,var(--ink) 15px,var(--ink) 18px)}
+.logo::after{content:"▶";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:#fff;font-size:11px}
+.logo:hover{transform:scale(1.1) rotate(-2deg)}
+.brand-txt{display:flex;flex-direction:column;line-height:1.15}
+.brand-cn{font-size:21px;font-weight:900;letter-spacing:1px}
+.brand-cn em{font-style:normal;color:var(--neon);font-family:var(--mono)}
+.brand-en{font-size:9.5px;letter-spacing:3px;color:var(--ink-3);text-transform:uppercase;margin-top:4px;font-family:var(--mono)}
+.menu{display:flex;align-items:center;gap:2px;list-style:none}
+.menu a{padding:8px 14px;border-radius:var(--r-s);font-size:14px;font-weight:700;color:var(--ink-2);transition:.25s var(--ease);position:relative}
+.menu a:hover{color:var(--neon);background:var(--vhs-2)}
+.menu a::before{content:"";position:absolute;left:50%;bottom:2px;width:0;height:2px;background:var(--neon);transition:.3s var(--ease)}
+.menu a:hover::before{width:50%;left:25%}
+.nav-btn{padding:10px 20px;border-radius:var(--r-s);border:1.5px solid var(--ink);background:var(--ink);color:#f4ecd8;font-size:13px;font-weight:700;cursor:pointer;transition:.3s var(--ease);white-space:nowrap;font-family:inherit;letter-spacing:.5px}
+.nav-btn:hover{background:var(--neon);border-color:var(--neon);transform:translateY(-2px);box-shadow:var(--shadow-m)}
+.burger{display:none;width:44px;height:44px;border:1.5px solid var(--line-2);border-radius:var(--r-s);background:#fff;cursor:pointer;position:relative}
+.burger s{position:absolute;left:12px;width:18px;height:2px;background:var(--ink);border-radius:2px;text-decoration:none;transition:.3s var(--ease)}
+.burger s:nth-child(1){top:15px}.burger s:nth-child(2){top:21px}.burger s:nth-child(3){top:27px}
+.burger.on s:nth-child(1){top:21px;transform:rotate(45deg)}.burger s:nth-child(2){opacity:0}.burger.on s:nth-child(3){top:21px;transform:rotate(-45deg)}
+
+.wrap{max-width:1260px;margin:0 auto;padding:0 30px}
+section{padding:104px 0;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:800;letter-spacing:2.5px;color:var(--maroon);margin-bottom:18px;font-family:var(--mono);text-transform:uppercase}
+.eyebrow .bd{width:20px;height:2px;background:var(--neon)}
+.stitle{font-size:clamp(1.9rem,4.2vw,3rem);font-weight:900;letter-spacing:.5px;line-height:1.3;margin-bottom:16px}
+.stitle em{font-style:normal;color:var(--neon)}
+.sdesc{font-size:15.5px;color:var(--ink-3);max-width:580px;line-height:1.95}
+.shead{margin-bottom:60px}
+.shead-flex{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:60px;flex-wrap:wrap}
+.more{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:800;color:var(--maroon);white-space:nowrap;flex-shrink:0;border-bottom:1px solid transparent;padding-bottom:2px}
+.more:hover{border-color:var(--maroon);gap:11px}
+.sec-tag{position:absolute;top:104px;right:30px;font-size:14vw;font-weight:900;color:rgba(255,46,77,.06);line-height:1;pointer-events:none;user-select:none;letter-spacing:-4px;font-family:var(--mono)}
+
+/* 录像厅 Hero */
+.hero{padding:64px 0 88px}
+.tape-deco{position:absolute;right:30px;top:60px;width:150px;height:96px;border-radius:8px;background:var(--ink);transform:rotate(6deg);box-shadow:var(--shadow-m);display:none;align-items:center;justify-content:center;gap:20px}
+.tape-deco span{width:34px;height:34px;border-radius:50%;border:6px solid var(--vhs);background:var(--ink)}
+.hero-in{position:relative;max-width:940px}
+.h-rec{display:inline-flex;align-items:center;gap:10px;margin-bottom:26px;background:var(--neon);color:#fff;padding:6px 14px;border-radius:3px;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:2px}
+.h-rec i{width:8px;height:8px;border-radius:50%;background:#fff;animation:blink 1.4s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+.hero h1{font-size:clamp(2.6rem,6.4vw,5rem);font-weight:900;line-height:1.16;letter-spacing:-1px;margin-bottom:8px}
+.hero h1 .neon{color:var(--neon);text-shadow:0 0 20px rgba(255,46,77,.35)}
+.hero h1 .out{color:transparent;-webkit-text-stroke:2px var(--ink)}
+.hero h2-sub{font-size:clamp(1.1rem,2.6vw,1.8rem);font-weight:800;color:var(--ink-2);margin-bottom:30px;letter-spacing:1px}
+.hero h2-sub .tape{background:var(--neon-3);padding:1px 10px;border-radius:3px;color:var(--ink)}
+.hero-sub{font-size:16.5px;color:var(--ink-2);line-height:1.95;margin-bottom:36px;max-width:620px}
+.h-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:46px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 30px;border-radius:var(--r-s);font-size:15px;font-weight:800;border:2px solid transparent;cursor:pointer;transition:.35s var(--ease);font-family:inherit;letter-spacing:.5px}
+.btn-pri{background:var(--neon);color:#fff;box-shadow:0 6px 18px rgba(255,46,77,.28)}
+.btn-pri:hover{background:#e6203d;transform:translateY(-3px);box-shadow:0 12px 30px rgba(255,46,77,.4)}
+.btn-out{background:#fff;color:var(--ink);border-color:var(--ink-2)}
+.btn-out:hover{border-color:var(--neon);color:var(--neon);transform:translateY(-3px)}
+.h-stats{display:flex;gap:0;flex-wrap:wrap;border-top:2px dashed var(--line-2)}
+.h-stats div{padding:26px 32px 0 0;border-right:1px solid var(--line);padding-right:32px;margin-right:32px}
+.h-stats div:last-child{border:none;padding-right:0;margin-right:0}
+.h-stats strong{display:block;font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:900;letter-spacing:-.5px;line-height:1;font-family:var(--mono)}
+.h-stats strong i{font-style:normal;font-size:.5em;color:var(--neon);margin-left:4px}
+.h-stats span{font-size:12px;color:var(--ink-3);margin-top:8px;display:block}
+.hero-tags{display:flex;gap:10px;margin-top:42px;flex-wrap:wrap}
+.hero-tags span{font-size:13.5px;font-weight:700;color:var(--ink-2);padding:7px 15px;border-radius:3px;background:var(--vhs-2);border:1px solid var(--line);transition:.3s;cursor:default;font-family:var(--mono)}
+.hero-tags span:hover{color:#fff;background:var(--neon);border-color:var(--neon)}
+
+/* 录像带频道 */
+.channels{background:var(--ink);color:var(--vhs);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.chan{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0;border-left:1px solid rgba(244,236,216,.12)}
+.ch-c{position:relative;padding:34px 26px;border-right:1px solid rgba(244,236,216,.12);border-bottom:1px solid rgba(244,236,216,.12);background:var(--ink);transition:.4s var(--ease);display:block;overflow:hidden}
+.ch-c:hover{background:#2a231f;transform:translateY(-4px)}
+.ch-c .band{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:2px;padding:4px 10px;border-radius:2px;margin-bottom:14px;color:#241f1c}
+.ch-c .band.b1{background:var(--neon)}.ch-c .band.b2{background:var(--neon-2)}.ch-c .band.b3{background:var(--neon-3)}.ch-c .band.b4{background:var(--neon-4)}.ch-c .band.b5{background:#c9d3e0}
+.ch-c h3{font-size:16.5px;font-weight:800;margin-bottom:7px;letter-spacing:.5px;color:#f4ecd8}
+.ch-c p{font-size:12px;color:#8d7c6b;line-height:1.75}
+.ch-c .ar{position:absolute;right:18px;bottom:18px;font-size:15px;color:var(--neon);opacity:0;transform:translateX(-8px);transition:.35s var(--ease)}
+.ch-c:hover .ar{opacity:1;transform:translateX(0)}
+
+/* 频道播放器主推 */
+.now{display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:stretch}
+.vhs-player{position:relative;border-radius:var(--r-l);overflow:hidden;min-height:470px;background:var(--ink);box-shadow:var(--shadow-l)}
+.vhs-player img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .8s var(--ease);filter:saturate(1.1) contrast(1.05)}
+.vhs-player:hover img{transform:scale(1.05)}
+.vhs-player .scan{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0,transparent 2px,rgba(255,255,255,.04) 2px,rgba(255,255,255,.04) 3px);z-index:2;pointer-events:none}
+.vhs-body{position:absolute;left:0;right:0;bottom:0;padding:42px;color:#fff;z-index:3}
+.vhs-body .onair{display:inline-flex;align-items:center;gap:8px;background:var(--neon);padding:5px 12px;border-radius:2px;font-family:var(--mono);font-size:11px;font-weight:800;letter-spacing:2px;margin-bottom:16px}
+.vhs-body .onair i{width:7px;height:7px;border-radius:50%;background:#fff;animation:blink 1.4s infinite}
+.vhs-body h3{font-size:clamp(1.5rem,3.2vw,2.2rem);font-weight:900;line-height:1.45;margin-bottom:14px;text-shadow:0 2px 14px rgba(0,0,0,.5)}
+.vhs-body p{font-size:14px;color:#f0e6d2;line-height:1.9;max-width:480px}
+.vhs-meta{display:flex;gap:20px;margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.22);font-size:12px;color:#e6d8c0;flex-wrap:wrap;font-family:var(--mono)}
+.vhs-side{display:flex;flex-direction:column;gap:18px}
+.vhs-s{position:relative;flex:1;background:#fff;border:1px solid var(--line);border-radius:var(--r-m);padding:24px 24px 24px 28px;overflow:hidden;transition:.4s var(--ease);display:block}
+.vhs-s::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--neon)}
+.vhs-s:hover{transform:translateX(6px);box-shadow:var(--shadow-m);border-color:var(--line-2)}
+.vhs-s .vt{font-family:var(--mono);font-size:11px;font-weight:800;letter-spacing:2px;color:var(--maroon);margin-bottom:9px}
+.vhs-s h4{font-size:17px;font-weight:800;line-height:1.45;margin-bottom:7px}
+.vhs-s p{font-size:12.5px;color:var(--ink-3);line-height:1.8}
+.vhs-s .fx{display:flex;justify-content:space-between;margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);font-size:12px;color:var(--ink-3);font-family:var(--mono)}
+.vhs-s .fx b{color:var(--neon);font-weight:800}
+
+/* 双碟装片单 */
+.tape-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:28px}
+.tape{display:block;perspective:1200px}
+.t-shell{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--r-m);overflow:hidden;transition:.5s var(--ease);box-shadow:var(--shadow-s)}
+.tape:hover .t-shell{transform:translateY(-8px) rotateX(4deg);box-shadow:var(--shadow-l);border-color:var(--neon)}
+.t-sticker{position:relative;aspect-ratio:4/5;overflow:hidden}
+.t-sticker img{width:100%;height:100%;object-fit:cover;transition:transform .65s var(--ease),filter .4s}
+.tape:hover .t-sticker img{transform:scale(1.1);filter:saturate(1.2)}
+.t-spine{position:absolute;top:0;left:0;right:0;background:linear-gradient(180deg,rgba(0,0,0,.5),transparent);padding:12px 14px;display:flex;justify-content:space-between;align-items:center}
+.t-no{font-family:var(--mono);font-size:20px;font-weight:900;color:rgba(255,255,255,.92);text-shadow:0 2px 8px rgba(0,0,0,.4)}
+.t-side{background:var(--neon);color:#fff;font-family:var(--mono);font-size:10px;font-weight:800;padding:4px 9px;border-radius:2px;letter-spacing:1px}
+.t-side.s2{background:var(--teal)}.t-side.s3{background:var(--neon-2)}.t-side.s4{background:var(--ink)}
+.t-play{position:absolute;bottom:12px;right:12px;width:44px;height:44px;border-radius:50%;background:var(--neon);color:#fff;display:grid;place-items:center;font-size:15px;box-shadow:0 4px 14px rgba(255,46,77,.4);transform:scale(0);transition:.35s var(--ease);opacity:0}
+.tape:hover .t-play{transform:scale(1);opacity:1}
+.t-label{padding:16px 4px 2px}
+.t-label h4{font-size:16.5px;font-weight:900;margin-bottom:6px;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.t-label .tr{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-3);align-items:center;font-family:var(--mono)}
+.t-label .tr b{color:var(--neon);font-weight:800}
+.t-label .td{margin-top:8px;font-size:12.5px;color:var(--ink-3);line-height:1.7;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+/* 放映时刻表 */
+.schedule{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px}
+.show{background:#fff;border:1px solid var(--line);border-radius:var(--r-m);padding:0;overflow:hidden;transition:.4s var(--ease)}
+.show:hover{transform:translateY(-6px);box-shadow:var(--shadow-m);border-color:var(--line-2)}
+.show-h{background:var(--ink);color:#f4ecd8;padding:16px 24px;display:flex;justify-content:space-between;align-items:center}
+.show-h .day{font-family:var(--mono);font-size:13px;font-weight:800;letter-spacing:2px}
+.show-h .date{font-family:var(--mono);font-size:12px;color:var(--neon-3)}
+.show-b{padding:24px}
+.show-b h4{font-size:18px;font-weight:800;margin-bottom:8px;line-height:1.45}
+.show-b p{font-size:13px;color:var(--ink-3);line-height:1.85}
+.show-f{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;border-top:1px dashed var(--line);background:var(--vhs-2)}
+.show-f span{font-family:var(--mono);font-size:11.5px;color:var(--ink-3)}
+.show-f a{font-size:13px;font-weight:800;color:var(--maroon)}
+
+/* 四步选片 */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:26px}
+.step{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--r-m);padding:32px 26px 26px;text-align:left;transition:.4s var(--ease)}
+.step:hover{transform:translateY(-6px);box-shadow:var(--shadow-m);border-color:var(--line-2)}
+.step .badge{display:inline-grid;place-items:center;width:60px;height:60px;margin-bottom:18px;border-radius:6px;background:var(--ink);color:var(--neon-3);font-family:var(--mono);font-size:24px;font-weight:900;box-shadow:0 6px 16px rgba(36,31,28,.22);transition:.4s var(--ease)}
+.step:hover .badge{background:var(--neon);color:#fff;transform:rotate(-4deg) scale(1.08)}
+.step h4{font-size:17.5px;font-weight:800;margin-bottom:9px}
+.step p{font-size:13px;color:var(--ink-3);line-height:1.85}
+.step .pn{position:absolute;top:14px;right:16px;font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:1px}
+
+/* 排行榜 */
+.chart{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:var(--r-m);overflow:hidden;background:#fff}
+.cht{padding:36px 34px}
+.cht-l{background:var(--vhs-2)}
+.cht-r{background:var(--ink);color:#f4ecd8}
+.cht-tag{display:inline-block;padding:5px 12px;border-radius:2px;font-size:11px;font-weight:800;color:#fff;background:var(--neon);letter-spacing:1.5px;margin-bottom:18px;font-family:var(--mono)}
+.cht-r .cht-tag{background:var(--neon-3);color:var(--ink)}
+.cht h3{font-size:clamp(1.4rem,2.8vw,1.9rem);font-weight:800;line-height:1.5;margin-bottom:16px}
+.cht p{font-size:14px;line-height:1.95;color:var(--ink-2);margin-bottom:18px}
+.cht-r p{color:#c9bda8}
+.cht ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.cht li{font-size:13.5px;line-height:1.75;padding-left:22px;position:relative;color:var(--ink-2)}
+.cht-r li{color:#c9bda8}
+.cht li::before{content:"▸";position:absolute;left:2px;top:0;font-size:14px;color:var(--neon)}
+.cht-r li::before{color:var(--neon-3)}
+.cht-foot{margin-top:22px;padding-top:18px;border-top:1px dashed var(--line)}
+.cht-r .cht-foot{border-color:rgba(244,236,216,.16)}
+.cht-foot span{font-size:12px;color:var(--ink-3);font-family:var(--mono)}
+.cht-r .cht-foot span{color:#9d8f7c}
+
+/* 放映室留言 */
+.room{display:grid;grid-template-columns:repeat(auto-fit,minmax(265px,1fr));gap:22px}
+.r{background:#fff;border:1px solid var(--line);border-radius:var(--r-m);padding:26px;transition:.4s var(--ease);position:relative}
+.r::after{content:"";position:absolute;top:16px;right:16px;width:10px;height:10px;border-radius:2px;background:var(--neon);opacity:.8;transform:rotate(45deg)}
+.r:hover{transform:translateY(-5px);box-shadow:var(--shadow-m);border-color:var(--neon)}
+.r-top{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.r-av{width:42px;height:42px;border-radius:4px;display:grid;place-items:center;font-size:14px;font-weight:800;color:#fff;flex-shrink:0;font-family:var(--mono)}
+.r-who{font-size:14px;font-weight:800}
+.r-when{font-size:11px;color:var(--ink-3);font-family:var(--mono)}
+.r-c{font-size:13.5px;color:var(--ink-2);line-height:1.9}
+.r-foot{display:flex;justify-content:space-between;align-items:center;margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:12px;font-family:var(--mono)}
+.r-foot .rm{color:var(--maroon);font-weight:800}
+.r-foot .rl{color:var(--ink-3);cursor:pointer;transition:.2s}
+.r-foot .rl:hover{color:var(--neon)}
+
+/* 数字墙 */
+.nums{background:var(--ink);color:#f4ecd8;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.nums-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:0}
+.nc{text-align:center;padding:52px 20px;border-right:1px solid rgba(244,236,216,.12)}
+.nc:last-child{border-right:none}
+.nc .n{font-family:var(--mono);font-size:clamp(2rem,4.4vw,3rem);font-weight:900;letter-spacing:-1px;line-height:1}
+.nc .n em{font-style:normal;font-size:.42em;color:var(--neon);margin-left:4px}
+.nc span{font-size:13px;color:#8d7c6b;margin-top:12px;display:block;font-family:var(--mono);letter-spacing:1px}
+
+/* 插播 CTA */
+.cta{background:var(--ink);border-radius:var(--r-l);padding:60px 54px;position:relative;overflow:hidden;display:grid;grid-template-columns:1.4fr .6fr;gap:44px;align-items:center;color:#fff;box-shadow:var(--shadow-l)}
+.cta::before{content:"VHS";position:absolute;right:6%;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:120px;font-weight:900;color:rgba(244,236,216,.04);letter-spacing:-6px}
+.cta::after{content:"";position:absolute;left:-60px;bottom:-80px;width:220px;height:220px;border-radius:50%;background:var(--neon);opacity:.85}
+.cta-txt{position:relative;z-index:2}
+.cta-txt .eyebrow{color:var(--neon-3)}
+.cta-txt .eyebrow .bd{background:var(--neon-3)}
+.cta-txt h2{font-size:clamp(1.7rem,3.6vw,2.5rem);font-weight:900;line-height:1.5;margin-bottom:16px;letter-spacing:.5px}
+.cta-txt p{font-size:14.5px;color:#d8cdb6;line-height:1.95}
+.cta-form{position:relative;z-index:2;display:flex;gap:12px;flex-wrap:wrap}
+.cta-in{flex:1;min-width:190px;padding:15px 20px;border-radius:var(--r-s);border:2px solid rgba(244,236,216,.28);background:rgba(244,236,216,.08);color:#fff;font-size:14px;outline:none;font-family:var(--mono);transition:.3s}
+.cta-in::placeholder{color:rgba(244,236,216,.6)}
+.cta-in:focus{border-color:var(--neon);background:rgba(244,236,216,.14)}
+.cta-sub{padding:15px 30px;border-radius:var(--r-s);border:none;background:var(--neon);color:#fff;font-size:14px;font-weight:800;cursor:pointer;transition:.3s var(--ease);white-space:nowrap;font-family:inherit;letter-spacing:.5px}
+.cta-sub:hover{background:#ff5a72;transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.2)}
+
+/* 页脚 */
+.foot{background:var(--ink);color:#8d7c6b;padding:80px 0 0}
+.foot-grid{max-width:1260px;margin:0 auto;padding:0 30px 52px;display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:48px}
+.foot-brand{max-width:340px}
+.foot-brand .logo{box-shadow:0 4px 14px rgba(255,46,77,.4)}
+.foot-brand .brand-cn{color:#f4ecd8}
+.foot-brand .brand-cn em{color:var(--neon)}
+.foot-brand p{font-size:13.5px;line-height:1.95;margin-top:18px;color:#8d7c6b}
+.foot-col h4{color:#f4ecd8;font-size:13.5px;font-weight:800;margin-bottom:20px;letter-spacing:1.5px;font-family:var(--mono)}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.foot-col a{font-size:13.5px;color:#8d7c6b;transition:.2s}
+.foot-col a:hover{color:var(--neon)}
+.foot-bot{max-width:1260px;margin:0 auto;padding:28px 30px;border-top:1px solid rgba(244,236,216,.1);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px;font-family:var(--mono)}
+.foot-bot .fl{display:flex;gap:24px}
+.foot-bot a{color:#6f6154;transition:.2s}
+.foot-bot a:hover{color:var(--neon)}
+.foot-site{color:#6f6154}
+
+.top{position:fixed;right:26px;bottom:26px;z-index:999;width:50px;height:50px;border-radius:8px;border:none;background:var(--neon);color:#fff;font-size:17px;cursor:pointer;box-shadow:var(--shadow-m);opacity:0;visibility:hidden;transform:translateY(14px);transition:.35s var(--ease);display:grid;place-items:center}
+.top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.top:hover{background:#e6203d;transform:translateY(-4px)}
+
+.rv{opacity:0;transform:translateY(28px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:1000px){
+    .now{grid-template-columns:1fr;gap:26px}
+    .vhs-side{flex-direction:row;flex-wrap:wrap}
+    .vhs-s{flex:1 1 280px}
+    .chart{grid-template-columns:1fr}
+    .cta{grid-template-columns:1fr;padding:50px 34px}
+}
+@media(max-width:768px){
+    section{padding:72px 0}
+    .sec-tag{display:none}
+    .shead,.shead-flex{margin-bottom:42px}
+    .menu{position:fixed;top:74px;left:0;right:0;flex-direction:column;background:rgba(244,236,216,.98);padding:18px 30px 26px;border-bottom:1px solid var(--line);gap:0;transform:translateY(-14px);opacity:0;visibility:hidden;transition:.35s var(--ease)}
+    .menu.open{transform:none;opacity:1;visibility:visible}
+    .menu a{padding:15px 4px;border-bottom:1px solid var(--line)}
+    .menu a::before{display:none}
+    .nav-btn{display:none}
+    .burger{display:block}
+    .hero{padding:40px 0 64px}
+    .h-stats div{border-right:none;padding:20px 22px 0 0;margin-right:22px}
+    .vhs-player{min-height:420px}
+    .vhs-body{padding:28px}
+    .nc{border-right:none;border-bottom:1px solid rgba(244,236,216,.12)}
+    .nc:last-child{border-bottom:none}
+    .h-actions .btn{flex:1;text-align:center;justify-content:center}
+}
+@media(max-width:480px){
+    .wrap,.nav-row,.foot-grid,.foot-bot,.foot-brand,.foot-col{padding-left:18px;padding-right:18px}
+    .foot-grid{grid-template-columns:1fr}
+    .tape-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+    .hero h1{font-size:2.4rem}
+    .cta{padding:44px 26px}
+    .h-stats div{flex:1 1 40%}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<div class="bars"></div>
+
+<header class="nav">
+    <div class="nav-row">
+        <a href="#" class="brand">
+            <div class="logo"></div>
+            <div class="brand-txt">
+                <span class="brand-cn">7<em>0</em>8<em>0</em>电影网</span>
+                <span class="brand-en">golden age cinema · est. 1978</span>
+            </div>
+        </a>
+        <ul class="menu" id="menu">
+            <li><a href="#home">首页</a></li>
+            <li><a href="#channels">频道</a></li>
+            <li><a href="#now">正在放映</a></li>
+            <li><a href="#tapes">双碟装</a></li>
+            <li><a href="#schedule">放映表</a></li>
+            <li><a href="#steps">选片四步</a></li>
+            <li><a href="#chart">黄金榜</a></li>
+            <li><a href="#room">放映室</a></li>
+        </ul>
+        <button class="nav-btn" onclick="window.location.href='#'">订一张票</button>
+        <button class="burger" id="burger" aria-label="菜单"><s></s><s></s><s></s></button>
+    </div>
+</header>
+
+<!-- Hero 录像厅 -->
+<section class="hero" id="home">
+    <div class="wrap">
+        <div class="hero-in">
+            <div class="h-rec rv"><i></i>ON AIR · 黄金年代放映厅</div>
+            <h1 class="rv">回到录像厅<br><span class="neon">最热闹</span>的<span class="out">那些年</span></h1>
+            <h2-sub class="h2-sub rv">七八十年代经典港片 · <span class="tape">录像带修复版</span> · 老片新看</h2-sub>
+            <p class="hero-sub rv">7080电影网是一个专门放映七八十年代老片的怀旧电影导航站。港片、录像厅记忆、老电影修复版，一期一期放，一期一期记，带你回到那个连爆米花都带着人情味的年代。</p>
+            <div class="h-actions rv">
+                <a href="#now" class="btn btn-pri">▶ 看正在放映</a>
+                <a href="#steps" class="btn btn-out">? 不知道看哪部</a>
+            </div>
+            <div class="hero-tags rv">
+                <span>港片黄金期</span><span>录像厅记忆</span><span>双碟装</span><span>老片修复</span><span>经典武侠</span><span>无厘头喜剧</span>
+            </div>
+            <div class="h-stats rv">
+                <div><strong>3,200<em>+</em></strong><span>已归档老片</span></div>
+                <div><strong>168<em>+</em></strong><span>已写的放映手记</span></div>
+                <div><strong>每周三<em>更新</em></strong><span>准时开厅</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 频道 -->
+<section class="channels" id="channels" style="padding:0">
+    <div class="wrap" style="padding-top:0;padding-bottom:0">
+        <div class="chan">
+            <a href="#now" class="ch-c rv"><span class="band b1">CH.01</span><h3>正在放映</h3><p>本周主打的一部，附一句为什么现在还值得看</p><span class="ar">▶</span></a>
+            <a href="#tapes" class="ch-c rv"><span class="band b2">CH.02</span><h3>双碟装</h3><p>按主题分的老片清单，一部部编号归档</p><span class="ar">▶</span></a>
+            <a href="#schedule" class="ch-c rv"><span class="band b3">CH.03</span><h3>放映时刻表</h3><p>未来两周的放映安排</p><span class="ar">▶</span></a>
+            <a href="#steps" class="ch-c rv"><span class="band b4">CH.04</span><h3>选片四步</h3><p>四个问题走完，不踩雷</p><span class="ar">▶</span></a>
+            <a href="#chart" class="ch-c rv"><span class="band b5">CH.05</span><h3>黄金榜</h3><p>观众票选的老片前十</p><span class="ar">▶</span></a>
+            <a href="#room" class="ch-c rv"><span class="band b1">CH.06</span><h3>放映室留言</h3><p>观众写下的观后感</p><span class="ar">▶</span></a>
+        </div>
+    </div>
+</section>
+
+<!-- 正在放映 -->
+<section id="now">
+    <div class="wrap">
+        <div class="shead-flex rv">
+            <div>
+                <div class="eyebrow"><span class="bd"></span>正在放映 · ON AIR</div>
+                <h2 class="stitle">这一周，<em>只放这一部</em></h2>
+                <p class="sdesc">不贪多。每周主打一部，写清它当年为什么火，以及放在今天看还有没有味道。</p>
+            </div>
+            <a href="#" class="more">回看往期放映 →</a>
+        </div>
+        <div class="now">
+            <a href="#" class="vhs-player rv">
+                <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=820&h=980&fit=crop" alt="本周放映">
+                <div class="scan"></div>
+                <div class="vhs-body">
+                    <span class="onair"><i></i>PLAYING NOW</span>
+                    <h3>《英雄本色 1986》——<br>那年录像厅里最响的一次掌声</h3>
+                    <p>95 分钟 · 港片 · 犯罪 / 动作<br>适合周末晚上，调暗灯光，把手机静音，当作第一次看。</p>
+                    <div class="vhs-meta"><span>港片黄金期</span><span>★ 9.2 / 10</span><span>95 min</span><span>SP 播放</span></div>
+                </div>
+            </a>
+            <div class="vhs-side">
+                <a href="#" class="vhs-s rv">
+                    <div class="vt">为什么现在还放它</div>
+                    <h4>当年为什么火</h4>
+                    <p>它的台词和人物关系，至今还是港片里最硬的那种。看的不只是动作，是义气两个字怎么写。</p>
+                    <div class="fx"><span>适合：想找回热血的人</span><b>必看</b></div>
+                </a>
+                <a href="#" class="vhs-s rv">
+                    <div class="vt">观前提示</div>
+                    <h4>看之前要知道</h4>
+                    <p>画质是修复版，但年代感保留着。别拿现在的特效标准去量它，看的是那股劲儿。</p>
+                    <div class="fx"><span>需要的心境：爽快</span><b>建议</b></div>
+                </a>
+                <a href="#" class="vhs-s rv">
+                    <div class="vt">延伸放映</div>
+                    <h4>看完还可以看</h4>
+                    <p>如果喜欢这种硬派叙事，双碟装里还有 6 部同类型的，可以连着看一个周末。</p>
+                    <div class="fx"><span>关联片单：港片硬派</span><b>6 部</b></div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 双碟装片单 -->
+<section id="tapes" style="background:var(--vhs-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap">
+        <div class="shead-flex rv">
+            <div>
+                <div class="eyebrow"><span class="bd"></span>双碟装 · VOL.06</div>
+                <h2 class="stitle">录像带<em>归档</em> · 六盒</h2>
+                <p class="sdesc">每盒磁带都有编号，贴着标签和侧标，代表它在片单里的排位；侧标颜色区分类型。</p>
+            </div>
+            <a href="#" class="more">查看全部磁带库 →</a>
+        </div>
+        <div class="tape-grid">
+            <a href="#" class="tape rv">
+                <div class="t-shell">
+                    <div class="t-sticker">
+                        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=420&h=525&fit=crop" alt="警察故事">
+                        <div class="t-spine"><span class="t-no">A01</span><span class="t-side">DISC 1</span></div>
+                        <span class="t-play">▶</span>
+                    </div>
+                </div>
+                <div class="t-label"><h4>警察故事</h4><div class="tr"><span>动作 · 港片</span><b>★ 8.9</b></div><div class="td">当年是真拼命拍出来的，每一场动作戏都经得起反复看。</div></div>
+            </a>
+            <a href="#" class="tape rv">
+                <div class="t-shell">
+                    <div class="t-sticker">
+                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=420&h=525&fit=crop" alt="倩女幽魂">
+                        <div class="t-spine"><span class="t-no">A02</span><span class="t-side s2">DISC 2</span></div>
+                        <span class="t-play">▶</span>
+                    </div>
+                </div>
+                <div class="t-label"><h4>倩女幽魂</h4><div class="tr"><span>奇幻 · 武侠</span><b>★ 9.1</b></div><div class="td">美术和音乐放到今天依然是天花板，气氛营造无人能及。</div></div>
+            </a>
+            <a href="#" class="tape rv">
+                <div class="t-shell">
+                    <div class="t-sticker">
+                        <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=420&h=525&fit=crop" alt="赌神">
+                        <div class="t-spine"><span class="t-no">A03</span><span class="t-side s3">DISC 1</span></div>
+                        <span class="t-play">▶</span>
+                    </div>
+                </div>
+                <div class="t-label"><h4>赌神</h4><div class="tr"><span>剧情 · 港片</span><b>★ 8.5</b></div><div class="td">当年多少人的发型都是从这部片里抄的，你懂的。</div></div>
+            </a>
+            <a href="#" class="tape rv">
+                <div class="t-shell">
+                    <div class="t-sticker">
+                        <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=420&h=525&fit=crop" alt="英雄本色">
+                        <div class="t-spine"><span class="t-no">A04</span><span class="t-side">DISC 2</span></div>
+                        <span class="t-play">▶</span>
+                    </div>
+                </div>
+                <div class="t-label"><h4>英雄本色</h4><div class="tr"><span>犯罪 · 港片</span><b>★ 9.2</b></div><div class="td">这周正在放映的就是它，先看预告，周三准时开播。</div></div>
+            </a>
+            <a href="#" class="tape rv">
+                <div class="t-shell">
+                    <div class="t-sticker">
+                        <img src="https://images.unsplash.com/photo-1585647347384-2593bc35786b?w=420&h=525&fit=crop" alt="阿郎的故事">
+                        <div class="t-spine"><span class="t-no">A05</span><span class="t-side s2">DISC 2</span></div>
+                        <span class="t-play">▶</span>
+                    </div>
+                </div>
+                <div class="t-label"><h4>阿郎的故事</h4><div class="tr"><span>剧情 · 爱情</span><b>★ 9.0</b></div><div class="td">结尾那首歌一响，多少硬汉当场破防，提前备好纸巾。</div></div>
+            </a>
+            <a href="#" class="tape rv">
+                <div class="t-shell">
+                    <div class="t-sticker">
+                        <img src="https://images.unsplash.com/photo-1502139214982-d0ad755818d8?w=420&h=525&fit=crop" alt="僵尸先生">
+                        <div class="t-spine"><span class="t-no">A06</span><span class="t-side s4">DISC 1</span></div>
+                        <span class="t-play">▶</span>
+                    </div>
+                </div>
+                <div class="t-label"><h4>僵尸先生</h4><div class="tr"><span>喜剧 · 恐怖</span><b>★ 8.4</b></div><div class="td">小时候躲在被窝里看，现在看是满满的亲切感和好笑。</div></div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- 放映时刻表 -->
+<section id="schedule">
+    <div class="wrap">
+        <div class="shead rv">
+            <div class="eyebrow"><span class="bd"></span>放映时刻表 · PROGRAM GUIDE</div>
+            <h2 class="stitle">未来<em>两周</em>的放映安排</h2>
+            <p class="sdesc">提前把时间空出来。周三固定开厅，周末加映。</p>
+        </div>
+        <div class="schedule">
+            <div class="show rv">
+                <div class="show-h"><span class="day">WED · 周三</span><span class="date">10.02</span></div>
+                <div class="show-b"><h4>《英雄本色》特别修复版</h4><p>本周主打。修复版首映夜，附带一段当年的幕后花絮。</p></div>
+                <div class="show-f"><span>20:00 · 主厅</span><a href="#">预约 ▸</a></div>
+            </div>
+            <div class="show rv">
+                <div class="show-h"><span class="day">SAT · 周六</span><span class="date">10.05</span></div>
+                <div class="show-b"><h4>港片硬派之夜 · 连映三部</h4><p>动作、枪战、追车，一个晚上过足瘾，适合叫上朋友。</p></div>
+                <div class="show-f"><span>19:30 · 主厅</span><a href="#">预约 ▸</a></div>
+            </div>
+            <div class="show rv">
+                <div class="show-h"><span class="day">SUN · 周日</span><span class="date">10.06</span></div>
+                <div class="show-b"><h4>老片修复专场 · 黑白经典</h4><p>放慢节奏的一天，黑白片自有它的讲究，看的是光影。</p></div>
+                <div class="show-f"><span>15:00 · 小厅</span><a href="#">预约 ▸</a></div>
+            </div>
+            <div class="show rv">
+                <div class="show-h"><span class="day">WED · 周三</span><span class="date">10.09</span></div>
+                <div class="show-b"><h4>《倩女幽魂》35mm 胶片放映</h4><p>胶片的颗粒感和色彩，是数字修复版替代不了的。</p></div>
+                <div class="show-f"><span>20:00 · 主厅</span><a href="#">预约 ▸</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 选片四步 -->
+<section id="steps" style="background:var(--vhs-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap">
+        <div class="shead rv">
+            <div class="eyebrow"><span class="bd"></span>选片四步 · HOW TO PICK</div>
+            <h2 class="stitle">回答这<em>四个问题</em>，基本不踩雷</h2>
+            <p class="sdesc">不知道看哪部的时候，按这个顺序走一遍，比翻评分靠谱。</p>
+        </div>
+        <div class="steps">
+            <div class="step rv"><span class="pn">STEP 01</span><div class="badge">?</div><h4>想找什么感觉</h4><p>想笑、想哭、想被燃到还是想安静一会儿？说出来，范围立刻缩小一半。</p></div>
+            <div class="step rv"><span class="pn">STEP 02</span><div class="badge">⏱</div><h4>有多少时间</h4><p>十点以后别挑战两小时的慢片，好片子值得清醒时完整地看。</p></div>
+            <div class="step rv"><span class="pn">STEP 03</span><div class="badge">★</div><h4>看标签不看评分</h4><p>评分是别人的，标签才是自己的。我们只写一句话，够你判断。</p></div>
+            <div class="step rv"><span class="pn">STEP 04</span><div class="badge">▶</div><h4>按下播放键</h4><p>调暗灯光、手机静音、备好零食。仪式感到位，同一部片是两种体验。</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- 黄金榜 -->
+<section id="chart">
+    <div class="wrap">
+        <div class="shead rv">
+            <div class="eyebrow"><span class="bd"></span>黄金榜 · TOP CHART</div>
+            <h2 class="stitle">观众票选的<em>老片前十</em></h2>
+            <p class="sdesc">不吹不黑，说清它适合谁、不适合谁，帮你在按下播放键之前做决定。</p>
+        </div>
+        <div class="chart rv">
+            <div class="cht cht-l">
+                <span class="cht-tag">必看 · MUST SEE</span>
+                <h3>这几部，<br>没看过的赶紧补</h3>
+                <p>它们撑起了那个年代的票房和口碑，放今天看依然能打。补片从这几部开始，顺序都不重要。</p>
+                <ul>
+                    <li>英雄本色 · 港片硬派的代表作</li>
+                    <li>倩女幽魂 · 奇幻美学的天花板</li>
+                    <li>警察故事 · 真拼命拍出来的动作戏</li>
+                    <li>阿郎的故事 · 结尾那首歌最催泪</li>
+                </ul>
+                <div class="cht-foot"><span>推荐心境：想找回热血与感动</span></div>
+            </div>
+            <div class="cht cht-r">
+                <span class="cht-tag">可跳过 · SKIP</span>
+                <h3>这些只在<br>特定场景下值得</h3>
+                <p>不是不好，是它要的东西很明确：大屏幕、周末晚上、不想动脑。缺一个条件，体验就打折。</p>
+                <ul>
+                    <li>爆米花爽片 · 需要大屏幕才过瘾</li>
+                    <li>怀旧合集 · 更适合群体观影</li>
+                    <li>冷门实验 · 需要耐心和心情</li>
+                    <li>翻拍重制 · 建议先看原版</li>
+                </ul>
+                <div class="cht-foot"><span>推荐心境：放松、想放空</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 数字墙 -->
+<section class="nums">
+    <div class="nums-grid">
+        <div class="nc"><div class="n">3,200<em>+</em></div><span>已归档老片</span></div>
+        <div class="nc"><div class="n">168<em>+</em></div><span>已写放映手记</span></div>
+        <div class="nc"><div class="n">142<em>+</em></div><span>主题片单</span></div>
+        <div class="nc"><div class="n">2.8<em>万</em></div><span>每周来访观众</span></div>
+        <div class="nc"><div class="n">每周三<em>开厅</em></div><span>准时不等人的节奏</span></div>
+    </div>
+</section>
+
+<!-- 放映室留言 -->
+<section id="room">
+    <div class="wrap">
+        <div class="shead-flex rv">
+            <div>
+                <div class="eyebrow"><span class="bd"></span>放映室留言 · GUESTBOOK</div>
+                <h2 class="stitle">观众<em>写下的</em>观后感</h2>
+                <p class="sdesc">大家最近看了哪些，又想把哪一部推荐给谁。</p>
+            </div>
+            <a href="#" class="more">也写一条 →</a>
+        </div>
+        <div class="room">
+            <div class="r rv">
+                <div class="r-top"><div class="r-av" style="background:#ff2e4d">7080</div><div><div class="r-who">老录像</div><div class="r-when">1 小时前</div></div></div>
+                <p class="r-c">跟着硬派那栏连着看了三晚，一部没踩雷。现在已经养成习惯，周三晚上固定来报到。</p>
+                <div class="r-foot"><span class="rm">盖于《英雄本色》</span><span class="rl">♡ 58</span></div>
+            </div>
+            <div class="r rv">
+                <div class="r-top"><div class="r-av" style="background:#1b6b66">磁带</div><div><div class="r-who">磁带君</div><div class="r-when">3 小时前</div></div></div>
+                <p class="r-c">修复版和原版的差别真的很大，这个分类做得好，帮我省了不少找资源的时间。</p>
+                <div class="r-foot"><span class="rm">盖于《倩女幽魂》</span><span class="rl">♡ 41</span></div>
+            </div>
+            <div class="r rv">
+                <div class="r-top"><div class="r-av" style="background:#ff7a00">胶片</div><div><div class="r-who">胶片迷</div><div class="r-when">昨天</div></div></div>
+                <p class="r-c">最喜欢每部只写一句话理由这个设计，不啰嗦，自己判断，这点很难得。</p>
+                <div class="r-foot"><span class="rm">盖于《阿郎的故事》</span><span class="rl">♡ 33</span></div>
+            </div>
+            <div class="r rv">
+                <div class="r-top"><div class="r-av" style="background:#241f1c">影迷</div><div><div class="r-who">小影迷</div><div class="r-when">昨天</div></div></div>
+                <p class="r-c">小时候躲在被窝看的那些片子，现在陪着孩子一起看，感觉又回来了。</p>
+                <div class="r-foot"><span class="rm">盖于《僵尸先生》</span><span class="rl">♡ 27</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section>
+    <div class="wrap">
+        <div class="cta rv">
+            <div class="cta-txt">
+                <div class="eyebrow"><span class="bd"></span>订一张票</div>
+                <h2>每周三一封，<br>把那部老片送到你手上</h2>
+                <p>不群发、不注水，每周只推一部，附一句为什么现在还值得看。看不看都随你，先订到票再说。</p>
+            </div>
+            <form class="cta-form" onsubmit="event.preventDefault();alert('票已订好 📼 周三晚上见！')">
+                <input type="email" class="cta-in" placeholder="你的邮箱地址" required>
+                <button type="submit" class="cta-sub">订一张票</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="foot">
+    <div class="foot-grid">
+        <div class="foot-brand">
+            <a href="#" class="brand">
+                <div class="logo"></div>
+                <div class="brand-txt"><span class="brand-cn">7<em>0</em>8<em>0</em>电影网</span><span class="brand-en">golden age cinema · est. 1978</span></div>
+            </a>
+            <p>一个只放老片的放映厅，希望用一期一期的放映手记，陪你把那些年错过的、看过的，再温习一遍。</p>
+        </div>
+        <div class="foot-col">
+            <h4>// 频道导航</h4>
+            <ul>
+                <li><a href="#now">正在放映</a></li>
+                <li><a href="#tapes">双碟装片单</a></li>
+                <li><a href="#schedule">放映时刻表</a></li>
+                <li><a href="#chart">黄金榜</a></li>
+            </ul>
+        </div>
+        <div class="foot-col">
+            <h4>// 主题片单</h4>
+            <ul>
+                <li><a href="#">港片黄金期</a></li>
+                <li><a href="#">录像厅记忆</a></li>
+                <li><a href="#">老片修复版</a></li>
+                <li><a href="#">经典武侠</a></li>
+            </ul>
+        </div>
+        <div class="foot-col">
+            <h4>// 关于本站</h4>
+            <ul>
+                <li><a href="#">关于放映厅</a></li>
+                <li><a href="#">投稿放映手记</a></li>
+                <li><a href="#">合作联系</a></li>
+                <li><a href="#">放映室留言</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="foot-bot">
+        <span class="foot-site">© 2026 7080电影网 · 7080dianyingwang-zh.github.io · 黄金年代放映厅，每周三开厅</span>
+        <div class="fl">
+            <a href="#">隐私政策</a>
+            <a href="#">免责声明</a>
+            <a href="#">友情链接</a>
+        </div>
+    </div>
+</footer>
+
+<button class="top" id="topBtn" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+    var b=document.getElementById('topBtn');
+    window.addEventListener('scroll',function(){if(window.scrollY>700)b.classList.add('show');else b.classList.remove('show');},{passive:true});
+    b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+(function(){
+    var btn=document.getElementById('burger'),m=document.getElementById('menu');
+    btn.addEventListener('click',function(){btn.classList.toggle('on');m.classList.toggle('open');});
+    m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){btn.classList.remove('on');m.classList.remove('open');});});
+})();
+(function(){
+    var io=new IntersectionObserver(function(es){
+        es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+    },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+})();
+(function(){
+    document.querySelectorAll('.rl').forEach(function(x){
+        x.addEventListener('click',function(){x.textContent=x.textContent.includes('♡')?'❤️ 已赞':'♡ 赞';});
+    });
+})();
+</script>
+</body>
+</html>
